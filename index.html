@@ -1,616 +1,385 @@
-
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis XV Años</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="keywords" content="Albercas, Monterrey, construcción de albercas"/>
-    <meta name="description" content="Albercas Monterrey">
-    <meta name="author" content="Albercas Monterrey">
+        body {
+            margin: 0;
+            font-family: 'Dancing Script', cursive;
+            text-align: center;
+            background: linear-gradient(180deg, #E6CCFF, #9B59B6, #E6CCFF);
+            overflow-x: hidden;
+            position: relative;
+        }
 
-    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+        .floating-lights {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
 
-	<title>Albercas Monterrey | Diseño y construcción de Albercas</title>
-	<meta name="description" content="Somos Albercas Monterrey, constructores de albercas en Monterrey, Nueno Leon, México. Trabajando para construir la alberca de tus sueños." />
-	<link rel="canonical" href="https://www.albercasmonterrey.com/" />
-	<meta property="og:locale" content="es_MX" />
-	<meta property="og:type" content="website" />
-	<meta property="og:title" content="Albercas Monterrey | Diseño y construcción de Albercas" />
-	<meta property="og:description" content="Somos Albercas Monterrey, constructores de albercas en Monterrey, Nueno Leon, México. Trabajando para construir la alberca de tus sueños." />
-	<meta property="og:url" content="https://www.albercasmonterrey.com/" />
-	<meta property="og:site_name" content="Albercas Monterrey" />
-	<meta property="og:image" content="https://www.albercasmonterrey.com/images/icono-2024.jpg" />
-	<meta property="og:image:width" content="2048" />
-	<meta property="og:image:height" content="2048" />
-	<meta property="og:image:type" content="image/jpeg" />
-	<meta name="twitter:card" content="summary_large_image" />
-    
-        <link rel="icon" type="image/png" href="favicon.ico" >
-        <meta name="theme-color" content="#ffffff">
+        .light {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: radial-gradient(circle, rgba(255, 223, 150, 1) 10%, rgba(255, 223, 150, 0) 70%);
+            border-radius: 50%;
+            animation: floatLights 6s infinite ease-in-out alternate;
+        }
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+        @keyframes floatLights {
+            from {
+                transform: translateY(0) translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateY(-100px) translateX(20px);
+                opacity: 0.5;
+            }
+        }
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,400i,700|Roboto+Condensed:200,300,300i,400,700|Roboto+Mono" rel="stylesheet">
+        .container {
+            max-width: 450px;
+            margin: auto;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+         /* --- SECCIÓN DEL SOBRE --- */
+         .intro {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
 
-    <!-- Pretty Photo -->
-    <link rel="stylesheet" href="css/prettyPhoto.css"/>
+        .envelope {
+            width: 100%;
+            height: 100%;
+            background: url('https://eventobonito.com/wp-content/uploads/2024/02/icono-sobre.png') no-repeat center;
+            background-size: contain;
+            transition: transform 0.8s ease-in-out;
+            cursor:pointer;
+        }
 
-    <!-- Flickity -->
-    <link rel="stylesheet" href="css/flickity.css"/>
+        .intro button {
+            margin-top: 20px;
+            background-color: #9B59B6;
+            color: white;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s;
+        }
 
-    <!-- animate.css -->
-    <link rel="stylesheet" href="css/animate.css"/>
+        .intro button:hover {
+            background-color: #6C3483;
+        }
 
-    <!-- Skills bar -->
-    <link rel="stylesheet" href="css/skills-bar.css"/>
+        .hidden {
+            display: none;
+        }
 
-    <!-- custom.css - the styling for this template -->
-    <link rel="stylesheet" href="css/custom.css">
+        .section {
+            background: rgba(255, 255, 255, 0.9);
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
 
-    <!-- Modernizr -->
-    <script src="js/modernizr-custom.js"></script>
+        h1, h2 {
+            font-weight: bold;
+            color: #6C3483;
+        }
 
+        .quinceanera {
+            font-size: 30px;
+        }
+
+        .date {
+            font-size: 20px;
+            color: #5B2C6F;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 300px;
+            border-radius: 10px;
+        }
+
+        .whatsapp-btn {
+            background-color: #8E44AD;
+            color: white;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            width: 90%;
+            margin-top: 10px;
+        }
+
+        .whatsapp-btn img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .music-controls {
+            margin-top: 20px;
+        }
+
+        .music-button {
+            background-color: #8E44AD;
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .music-button:hover {
+            background-color: #5B2C6F;
+        }
+
+        .countdown {
+            font-size: 22px;
+            color: #6C3483;
+            font-weight: bold;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .west-button-link {
+            font-weight: bold;
+            color: #6C3483;
+            text-decoration: none;
+        }
+        /* --- SECCIÓN FLOTANTE PARA CONTROL DE MÚSICA --- */
+        .music-control {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: rgba(108, 52, 131, 0.9);
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            transition: 0.3s;
+        }
+
+        .music-control:hover {
+            background-color: rgba(155, 89, 182, 1);
+        }
+
+        .music-control img {
+            width: 24px;
+            height: 24px;
+        }
+    </style>
 </head>
-
 <body>
 
-<div id="preloader"></div>
+    <div class="floating-lights">
+        <div class="light" style="top: 10%; left: 20%; animation-duration: 6s;"></div>
+        <div class="light" style="top: 30%; left: 60%; animation-duration: 5s;"></div>
+        <div class="light" style="top: 50%; left: 40%; animation-duration: 7s;"></div>
+        <div class="light" style="top: 70%; left: 80%; animation-duration: 6s;"></div>
+        <div class="light" style="top: 90%; left: 10%; animation-duration: 8s;"></div>
+    </div>
 
-<!-- HEADER -->
-<header>
-    <nav class="navbar navbar-toggleable-md navbar-light bg-faded fixed-top">
-        <div class="container" style="width: 90%">
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-brand" href="index.html"><img src="images/logo/logo.png" alt="Puenteacero"/></a>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-0 ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Inicio<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">Nosotros</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#products">Productos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#services">Servicios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#portfolio">Portfolio</a>
-                    </li>                    
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contacts">Contacto</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
-<!-- HEADER END -->
+    <div class="container">
 
-<div id="content-wrap">
-
-    <!-- HERO AREA -->
-    <div class="jumbotron" id="#hero" data-stellar-background-ratio="0.5" data-stellar-vertical-offset="0">
-        <div id="particles-js"></div>
-        <div id="bg-video-wrap">
-            <video id="bg-video" playsinline autoplay muted loop>
-            </video>
-        </div>
-        <div class="container">
-            <h1>ALBERCAS MONTERREY</h1>
-            <h3>CONSTRUYENDO LA ALBERCA DE TUS SUEÑOS</h3>
-            <div id="intro-text">
+        <!-- SECCIÓN DEL SOBRE -->
+        <div class="intro" id="intro">
+            <div class="envelope" id="envelope"></div>
+            <!--
+            <img fetchpriority="high" decoding="async" width="2970" height="5280" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://eventobonito.com/wp-content/uploads/2024/02/icono-sobre.png" class="attachment-full size-full wp-image-31695 lazyload" alt="" data-srcset="https://eventobonito.com/wp-content/uploads/2024/02/icono-sobre.png 2970w, https://eventobonito.com/wp-content/uploads/2024/02/icono-sobre-169x300.png 169w, https://eventobonito.com/wp-content/uploads/2024/02/icono-sobre-576x1024.png 576w, https://eventobonito.com/wp-content/uploads/2024/02/icono-sobre-768x1365.png 768w, https://eventobonito.com/wp-content/uploads/2024/02/icono-sobre-864x1536.png 864w, https://eventobonito.com/wp-content/uploads/2024/02/icono-sobre-1152x2048.png 1152w, https://eventobonito.com/wp-content/uploads/2024/02/icono-sobre-600x1067.png 600w" sizes="(max-width: 2970px) 100vw, 2970px" /><noscript><img decoding="async" width="2970" height="5280" src="../../../wp-content/uploads/2024/02/icono-sobre.png" class="attachment-full size-full wp-image-31695 lazyload" alt="" srcset="https://eventobonito.com/wp-content/uploads/2024/02/icono-sobre.png 2970w, https://eventobonito.com/wp-content/uploads/2024/02/icono-sobre-169x300.png 169w, https://eventobonito.com/wp-content/uploads/2024/02/icono-sobre-576x1024.png 576w, https://eventobonito.com/wp-content/uploads/2024/02/icono-sobre-768x1365.png 768w, https://eventobonito.com/wp-content/uploads/2024/02/icono-sobre-864x1536.png 864w, https://eventobonito.com/wp-content/uploads/2024/02/icono-sobre-1152x2048.png 1152w, https://eventobonito.com/wp-content/uploads/2024/02/icono-sobre-600x1067.png 600w" sizes="(max-width: 2970px) 100vw, 2970px" /></noscript>															</div>-->
+        </div> 
                 
-            </div>
-			<a href="zpromo.html" class="btn btn-primary">¡Aprovecha promociones!</a>
+        <!-- Sección 1: Bienvenida -->
+        <div id="invitacion" class="section">
+            <h2>Mis XV Años</h2>
+            <h1 class="quinceanera">Lesly</h1>
+            <p class="date">26 de Abril 2025</p>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdp0kb6sHpA3m1HRJ3CFv7BqMGf881fhyyBA&s" alt="Rapunzel XV">
         </div>
+
+        <!-- Sección 2: Dirección del Evento -->
+        <div class="section">
+            <h2>Recepción</h2>
+            <p>Condesa Real Monterrey (Salon Diamante), Nueva Escocia 4350, Industrial Hab Abraham Lincoln, 64310 Monterrey, N.L.</p>
+            <img src=https://www.condesareal.com/images/single-img-two.jpg alt="Condesa Real Monterrey">
+            <a class="west-button-link" href="https://maps.app.goo.gl/tJoqrZwi69YRXJaz9">
+                <span>Ver Mapa</span>
+            </a>
+        </div>
+
+        <!-- Sección 3: Dirección de la Iglesia -->
+        <div class="section">
+            <h2>Ceremonia Religiosa</h2>
+            <p>Parroquia La Ascensión del Señor, Viviano L. Villarreal 453, Burócratas del Estado, 64380 Monterrey, N.L.</p>
+            <img src=https://www.laascension.net/wp-content/uploads/2018/11/logotipo-nuevo-red.png alt="Iglesia">
+            <a class="west-button-link" href="https://maps.app.goo.gl/3PGhNWKdRmXU5xft5">
+                <span>Ver Mapa</span>
+            </a>
+        </div>
+
+        <!-- Sección 4: Fotografías -->
+        <div class="section">
+            <h2>Momentos Especiales</h2>
+            <img src="https://www.mivestidodexv.mx/img-vestidos/unicornio/vestido-de-xv-unicornio-con-aplicaciones-de-plata-y-pedreria-tornasol-rosa-lila.webp" alt="Foto 1">
+            <img src="https://www.mivestidodexv.mx/img-vestidos/azucena/vestido-xv-lila-con-tela-bordada-mangas-caidas-mivestidodexvmx.webp" alt="Foto 2">
+            <img src="https://www.mivestidodexv.mx/img-vestidos/isabella/vestido-de-xv-dorado-mi-vestido-de-xv.webp" alt="Rapunzel y magia">
+        </div>
+
+        <div class="section">
+            <h2>Faltan</h2>
+            <p class="countdown" id="countdown"></p>
+        </div>
+
+        <div class="section">
+            <h2>Confirma tu Asistencia</h2>
+            <a href="https://wa.me/528125903222?text=¡Hola!%20Confirmo%20mi%20asistencia%20a%20tus%20XV%20años%20el%2026%20de%20Abril%202025" class="whatsapp-btn">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo">
+                Confirmar
+            </a>
+        </div>  
+
+        <!-- SECCIÓN FLOTANTE PARA CONTROL DE MÚSICA -->
+        <div class="music-control" onclick="toggleAudio()">
+            <img id="music-icon" src="https://cdn-icons-png.flaticon.com/512/727/727269.png" alt="Icono Música">
+            <span id="music-text">Reproducir Música</span>
+        </div>
+
+
     </div>
-    <!-- HERO AREA END -->
 
-    <!-- bouncing arrow -->
-    <div class="arrow-wrap">
-        <a href="#about" class="arrow down-bounce scroll-link fa fa-angle-double-down"></a>
-    </div>
+    <!-- AUDIO DE FONDO -->
+    <audio id="bg-music" loop>
+        <source src="https://envittia.com/wp-content/uploads/2024/10/JVKE-golden-hour-Cello-Version.mp3" type="audio/mp3">
+        Tu navegador no soporta el audio HTML5.
+    </audio>
 
-    <!-- ABOUT -->
-    <section id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-12">
-                    <div>
-                        <h2>Sobre Nosotros</h2>
-                    </div>
-                    <div id="about-text">
-                        <p>
-                            En nuestra empresa, nos dedicamos a crear albercas de ensueño que no solo son un oasis de relajación y diversión, sino también una inversión en calidad de vida. Utilizamos únicamente los materiales más avanzados y duraderos del mercado, garantizando así la excelencia en cada detalle. Desde el diseño inicial hasta la construcción final, nuestro equipo de expertos se compromete a ofrecer una experiencia sin igual, asegurando que cada alberca que creamos sea una obra maestra de ingeniería y estética. Con nosotros, cada chapuzón se convierte en una experiencia inolvidable de lujo y confort, respaldada por la más alta calidad en cada elemento.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-12">
-                    <div class="photo-wrap">
-                        <img src="images/photo.jpg" class="photo img-fluid" alt=""/>
-                        <div class="photo-overlay">
-                            <div class="photo-text social">
-                                <a href="https://wa.link/p3o34c"><i class="fa fa-whatsapp"></i></a>
-                                <a href="https://www.facebook.com/Construccion.Albercas.Monterrey/"><i class="fa fa-facebook"></i></a>
-                                <a href="https://instagram.com/Construccion.Albercas.Monterrey/"><i class="fa fa-instagram"></i></a>
-                                <a href="https://www.google.com.mx/"><i class="fa fa-google"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ABOUT END -->
+    <script>
+        const myDiv = document.querySelector('#intro');
+        myDiv.addEventListener('click', function() {
+            abrirSobre();
+        });
 
-    <!-- PRODUCTS -->
-    <section id="products">
-        <div class="section-header">
-            <div>
-                <h2>Nuestros Productos</h2>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-sm-6">
-                    <div class="pricingTable">
-                        <div class="pricingTable-header">
-                            <h3 class="title">Albercas Residenciales</h3>
-                        </div>
-                        <div class="pricing-content " style="height:250px;">
-                            <img src="images/products/zp1.jpg" class="photo photo-adjust" alt=""/>
-                            </div>
-                        </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="pricingTable">
-                        <div class="pricingTable-header">
-                            <h3 class="title">Albercas Comerciales</h3>
-                        </div>
-                        <div class="pricing-content" style="height:250px;">
-                            <img src="images/products/zp2.jpg" class="photo photo-adjust" alt=""/>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="pricingTable">
-                        <div class="pricingTable-header">
-                            <h3 class="title">Accesorios y Equipamiento</h3>
-                        </div>
-                        <div class="pricing-content" style="height:250px;">
-                            <img src="images/products/zp3.jpg" class="photo photo-adjust" alt=""/>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="pricingTable">
-                        <div class="pricingTable-header">
-                            <h3 class="title"><br/>Otros</h3>
-                        </div>
-                        <div class="pricing-content" style="height:250px;">
-                           <img src="images/products/zp4.jpg" class="photo photo-adjust" alt=""/>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- PRODUCTS END -->
+        function abrirSobre() {
+            const envelope = document.getElementById("envelope");
+            envelope.style.transform = "rotateX(90deg)";
 
-    <!-- SERVICES -->
-    <section id="services">
-        <div class="section-header">
-            <div>
-                <h2>Servicios que ofrecemos</h2>
-            </div>
-        </div>
-        <div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-md-12 col-lg-12">
-                        <div class="box">
-                            <div class="circle"><i class="fa fa-cogs"></i></div>
-                            <p style="text-align: left;">
-                                Diseño y construcción de albercas de concreto <br><br>
+            setTimeout(() => {
+                document.getElementById("intro").classList.add("hidden");
+                document.getElementById("invitacion").classList.remove("hidden");
+                animarSecciones();
+                playAudio();
+            }, 1000);
+        }
 
-                                Todas nuestras albercas incluyen:<br>
-                                * Excavación<br>
-                                * Retiro de Tierra<br>
-                                * Armado de estructura de varillas<br>
-                                * Concreto cimbrado y vaciado bombeado<br>
-                                * Tubería y equipo de filtración<br>
-                                * Pintura y cenefas<br>
-                                * Banquetas<br>
-                                * Reflector multicolor<br>
-                                * Cascada 60cm<br>                                
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- SERVICES END -->
+        let audio = document.getElementById("bg-music");
+        let audioPlaying = false;
+        let musicIcon = document.getElementById("music-icon");
+        let musicText = document.getElementById("music-text");
 
-    <!-- HIRE ME -->
-    <section id="hireme" data-stellar-background-ratio="0.5" data-stellar-vertical-offset="0">
-        <div class="section-header container">
-            <div class="col-12">
-                <h2 class="animation" data-animation="fadeInLeft">Tienes la alberca de tus sueños en mente?</h2>
-                <a data-animation="fadeInRight" class="btn btn-primary scroll-link animation" href="#contacts">Contactanos!</a>
-            </div>
-        </div>
-    </section>
-    <!-- HIRE ME END -->
-    <!-- PORTFOLIO -->
-    <section id="portfolio">
-        <div class="section-header">
-            <div>
-                <h2>Nuestros trabajos</h2>
-            </div>
-        </div>
-        <div class="container">
-             <div id="filters-group">
-                <a class="filter" data-filter="*">show all</a>
-                <a class="filter" data-filter=".renders">RENDERS</a>
-                <a class="filter" data-filter=".proyectos">PROYECTOS</a>
-                <a class="filter" data-filter=".procesos">PROCESO</a>
-            </div>
-            <div id="portfolio-items" class="row">
-                <div class="item col-md-6 col-lg-4 renders" data-category="renders">
-                    <a title="Descripción personalizada en <a href='#'>URL</a>."
-                       data-rel="prettyPhoto"
-                       href="images/portfolio/renders.jpg">
-                        <div class="item-wrap ">
-                            <img class="img-fluid img-west" src="images/portfolio/renders.jpg" alt="renders">
-                        </div>
-                        <span class="magnifier"></span>
-                    </a>
-                </div>
-                <div class="item col-md-6 col-lg-4 renders" data-category="renders">
-                    <a title="Descripción personalizada en <a href='#'>URL</a>."
-                       data-rel="prettyPhoto"
-                       href="images/portfolio/renders1.jpg">
-                        <div class="item-wrap ">
-                            <img class="img-fluid img-west" src="images/portfolio/renders1.jpg" alt="renders">
-                        </div>
-                        <span class="magnifier"></span>
-                    </a>
-                </div>
-                <div class="item col-md-6 col-lg-4 renders" data-category="renders">
-                    <a title="Descripción personalizada en <a href='#'>URL</a>."
-                       data-rel="prettyPhoto"
-                       href="images/portfolio/renders2.jpg">
-                        <div class="item-wrap ">
-                            <img class="img-fluid img-west" src="images/portfolio/renders2.jpg" alt="renders">
-                        </div>
-                        <span class="magnifier"></span>
-                    </a>
-                </div>
-                <div class="item col-md-6 col-lg-4 proyectos" data-category="proyectos">
-                    <a title="Descripción personalizada en <a href='#'>URL</a>."
-                       data-rel="prettyPhoto"
-                       href="images/portfolio/proyecto.jpg">
-                        <div class="item-wrap ">
-                            <img class="img-fluid img-west" src="images/portfolio/proyecto.jpg" alt="proyectos">
-                        </div>
-                        <span class="magnifier"></span>
-                    </a>
-                </div>
-                <div class="item col-md-6 col-lg-4 proyectos" data-category="proyectos">
-                    <a title="Descripción personalizada en <a href='#'>URL</a>."
-                       data-rel="prettyPhoto"
-                       href="images/portfolio/proyecto1.jpg">
-                        <div class="item-wrap ">
-                            <img class="img-fluid img-west" src="images/portfolio/proyecto1.jpg" alt="proyectos">
-                        </div>
-                        <span class="magnifier"></span>
-                    </a>
-                </div>
-                <div class="item col-md-6 col-lg-4 proyectos" data-category="proyectos">
-                    <a title="Descripción personalizada en <a href='#'>URL</a>."
-                       data-rel="prettyPhoto"
-                       href="images/portfolio/proyecto2.jpg">
-                        <div class="item-wrap ">
-                            <img class="img-fluid img-west" src="images/portfolio/proyecto2.jpg" alt="proyectos">
-                        </div>
-                        <span class="magnifier"></span>
-                    </a>
-                </div>
-                <div class="item col-md-6 col-lg-4 proyectos" data-category="proyectos">
-                    <a title="Descripción personalizada en <a href='#'>URL</a>."
-                       data-rel="prettyPhoto"
-                       href="images/portfolio/proyecto3.jpg">
-                        <div class="item-wrap ">
-                            <img class="img-fluid img-west" src="images/portfolio/proyecto3.jpg" alt="proyectos">
-                        </div>
-                        <span class="magnifier"></span>
-                    </a>
-                </div>
-                <div class="item col-md-6 col-lg-4 proyectos" data-category="proyectos">
-                    <a title="Descripción personalizada en <a href='#'>URL</a>."
-                       data-rel="prettyPhoto"
-                       href="images/portfolio/proyecto4.jpg">
-                        <div class="item-wrap ">
-                            <img class="img-fluid img-west" src="images/portfolio/proyecto4.jpg" alt="proyectos">
-                        </div>
-                        <span class="magnifier"></span>
-                    </a>
-                </div>
-                <div class="item col-md-6 col-lg-4 proyectos" data-category="proyectos">
-                    <a title="Descripción personalizada en <a href='#'>URL</a>."
-                       data-rel="prettyPhoto"
-                       href="images/portfolio/proyecto5.jpg">
-                        <div class="item-wrap ">
-                            <img class="img-fluid img-west" src="images/portfolio/proyecto5.jpg" alt="proyectos">
-                        </div>
-                        <span class="magnifier"></span>
-                    </a>
-                </div>
-                <div class="item col-md-6 col-lg-4 procesos" data-category="procesos">
-                    <a title="Descripción personalizada en <a href='#'>URL</a>."
-                       data-rel="prettyPhoto"
-                       href="images/portfolio/Procesos1.jpg">
-                        <div class="item-wrap">
-                            <img class="img-fluid img-west" src="images/portfolio/Procesos1.jpg" alt="procesos">
-                        </div>
-                        <span class="magnifier"></span>
-                    </a>
-                </div>
-                <div class="item col-md-6 col-lg-4 procesos" data-category="procesos">
-                    <a title="Descripción personalizada en <a href='#'>URL</a>."
-                       data-rel="prettyPhoto"
-                       href="images/portfolio/Procesos2.jpg">
-                        <div class="item-wrap">
-                            <img class="img-fluid img-west" src="images/portfolio/Procesos2.jpg" alt="procesos">
-                        </div>
-                        <span class="magnifier"></span>
-                    </a>
-                </div>
-                <div class="item col-md-6 col-lg-4 procesos" data-category="procesos">
-                    <a title="Descripción personalizada en <a href='#'>URL</a>."
-                       data-rel="prettyPhoto" 
-                       href="images/portfolio/Procesos3.jpg">
-                        <div class="item-wrap">
-                            <img class="img-fluid img-west" src="images/portfolio/Procesos3.jpg" alt="procesos">
-                        </div>
-                        <span class="magnifier"></span>
-                    </a>
-                </div>
+        function toggleAudio() {
+            if (audioPlaying) {
+                audio.pause();
+                musicIcon.src = "https://cdn-icons-png.flaticon.com/512/727/727269.png"; // Icono de música apagada
+                musicText.innerText = "Reproducir Música";
+            } else {
+                audio.play();
+                musicIcon.src = "https://cdn-icons-png.flaticon.com/512/149/149852.png"; // Icono de música encendida
+                musicText.innerText = "Pausar Música";
+            }
+            audioPlaying = !audioPlaying;
+        }
 
-                <div class="item col-md-6 col-lg-4 procesos" data-category="procesos">
-                    <a title="Descripción personalizada en <a href='#'>URL</a>."
-                       data-rel="prettyPhoto"
-                       href="images/portfolio/Procesos4.jpg">
-                        <div class="item-wrap ">
-                            <img class="img-fluid img-west" src="images/portfolio/Procesos4.jpg" alt="procesos">
-                        </div>
-                        <span class="magnifier"></span>
-                    </a>
-                </div>
-                <div class="item col-md-6 col-lg-4 procesos" data-category="procesos">
-                    <a title="Descripción personalizada en <a href='#'>URL</a>."
-                       data-rel="prettyPhoto"
-                       href="images/portfolio/Procesos5.jpg">
-                        <div class="item-wrap">
-                            <img class="img-fluid img-west" src="images/portfolio/Procesos5.jpg" alt="procesos">
-                        </div>
-                        <span class="magnifier"></span>
-                    </a>
-                </div>
-                <div class="item col-md-6 col-lg-4 procesos" data-category="procesos">
-                    <a title="Descripción personalizada en <a href='#'>URL</a>."
-                       data-rel="prettyPhoto" 
-                       href="images/portfolio/Procesos6.jpg">
-                        <div class="item-wrap">
-                            <img class="img-fluid img-west" src="images/portfolio/Procesos6.jpg" alt="procesos">
-                        </div>
-                        <span class="magnifier"></span>
-                    </a>
-                </div>
-                <div class="item col-md-6 col-lg-4 procesos" data-category="procesos">
-                    <a title="Descripción personalizada en <a href='#'>URL</a>."
-                       data-rel="prettyPhoto" 
-                       href="images/portfolio/Procesos7.jpg">
-                        <div class="item-wrap">
-                            <img class="img-fluid img-west" src="images/portfolio/Procesos7.jpg" alt="procesos">
-                        </div>
-                        <span class="magnifier"></span>
-                    </a>
-                </div>
-                <div class="item col-md-6 col-lg-4 procesos" data-category="procesos">
-                    <a title="Descripción personalizada en <a href='#'>URL</a>."
-                       data-rel="prettyPhoto" 
-                       href="images/portfolio/Procesos8.jpg">
-                        <div class="item-wrap">
-                            <img class="img-fluid img-west" src="images/portfolio/Procesos8.jpg" alt="procesos">
-                        </div>
-                        <span class="magnifier"></span>
-                    </a>
-                </div>
-                <div class="item col-md-6 col-lg-4 procesos" data-category="procesos">
-                    <a title="Descripción personalizada en <a href='#'>URL</a>."
-                       data-rel="prettyPhoto" 
-                       href="images/portfolio/Procesos10.jpg">
-                        <div class="item-wrap">
-                            <img class="img-fluid img-west" src="images/portfolio/Procesos10.jpg" alt="procesos">
-                        </div>
-                        <span class="magnifier"></span>
-                    </a>
-                </div>
-                <div class="item col-md-6 col-lg-4 procesos" data-category="procesos">
-                    <a title="Descripción personalizada en <a href='#'>URL</a>."
-                       data-rel="prettyPhoto" 
-                       href="images/portfolio/Procesos11.jpg">
-                        <div class="item-wrap">
-                            <img class="img-fluid img-west" src="images/portfolio/Procesos11.jpg" alt="procesos">
-                        </div>
-                        <span class="magnifier"></span>
-                    </a>
-                </div>
-                <div class="item col-md-6 col-lg-4 procesos" data-category="procesos">
-                    <a title="Descripción personalizada en <a href='#'>URL</a>."
-                       data-rel="prettyPhoto" 
-                       href="images/portfolio/Procesos12.jpg">
-                        <div class="item-wrap">
-                            <img class="img-fluid img-west" src="images/portfolio/Procesos12.jpg" alt="procesos">
-                        </div>
-                        <span class="magnifier"></span>
-                    </a>
-                </div>
-                <div class="item col-md-6 col-lg-4 procesos" data-category="procesos">
-                    <a title="Descripción personalizada en <a href='#'>URL</a>."
-                       data-rel="prettyPhoto" 
-                       href="images/portfolio/Procesos13.jpg">
-                        <div class="item-wrap">
-                            <img class="img-fluid img-west" src="images/portfolio/Procesos13.jpg" alt="procesos">
-                        </div>
-                        <span class="magnifier"></span>
-                    </a>
-                </div>
+        
 
-            </div>
-            
+        function playAudio() {
+            audio.volume = 0.5;
+            audio.play();
+            audioPlaying = true;
+        }
 
-        </div>
-    </section>
-    <!-- PORTFOLIO END -->
+        function toggleAudio() {
+            if (audioPlaying) {
+                audio.pause();
+            } else {
+                audio.play();
+            }
+            audioPlaying = !audioPlaying;
+        }
 
-    <!-- TESTIMONIALS -->
-    <section id="testimonials" data-stellar-background-ratio="0.5" data-stellar-vertical-offset="30">
-        <div class="section-header">
-            <div>
-                <h2>nuestros clientes opinan</h2>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div id="testimonials-content" class="col-12">
-                    <div class="gallery-cell">
-                        <div class="testimonial">
-                            <img class="testimonial-avatar" src="images/testimonials/cliente1.jpg" alt="">
-                            <q class="testimonial-quote">Muy buenos precios y buen servicio, Nosotros disfrutando la alberca que nos hicieron ustedes quedó mmalonaaaaaa.</q>
-                            <span class="testimonial-author">Pablitho Tigre Toda la Vida</span>
-                        </div>
-                    </div>
-                    <div class="gallery-cell">
-                        <div class="testimonial">
-                            <img class="testimonial-avatar" src="images/testimonials/cliente2.jpg" alt="">
-                            <q class="testimonial-quote">Tienen mucha experiencia para hacer la alberca a tu gusto y de tu sueños, ellos hicieron la alberca de mi casa y 
-                                mi familia quedo muy satisfecha.</q>
-                            <span class="testimonial-author">Isabel Perez Y Perez</span>
-                        </div>
-                    </div>
-                    <div class="gallery-cell">
-                        <div class="testimonial">
-                            <img class="testimonial-avatar" src="images/testimonials/cliente3.jpg" alt="">
-                            <q class="testimonial-quote">Precio, buenos tiempos de entrega, Excelente asesoría personalizada al momento de cotizar muy amables y muy responsables.</q>
-                            <span class="testimonial-author">Francisco Alanis Alvarado</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- TESTIMONIALS END -->
+        function playMusic() {
+            document.getElementById("bg-music").play();
+        }
 
-    <!-- CONTACT FORM  -->
-    <section id="contacts">
-        <div class="section-header">
-            <div>
-                <h2>CONTACTO <i class="fa fa-address-card fa-4"></i></h2> 
-            </div>
-        </div>
-        <div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 offset-md-2">
-                        <div class="box">
-                            <p style="text-align: left;">
-                                    Ponemos a su disposición los medios de contacto para cualquier información, cotización, duda ó tiempos de entrega
-                                    relacionada con nuestros servicios publicados en el portal.<br/><br/>
-                                 
-                                    Linea de Contacto:<br/>
-                                    <a href="https://wa.link/p3o34c"><img src="images/logo/wp.png" alt="wp" width="30" height="30" /></a> Contactanos<br/><br/>
-                                    <a href="https://wa.link/p3o34c"><img src="images/logo/wp.png" alt="wp" width="30" height="30" /></a> Contactanos<br/><br/>
+        function stopMusic() {
+            document.getElementById("bg-music").pause();
+        }
 
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- CONTACT FORM  END -->
-</div>
+        function actualizarCuentaRegresiva() {
+            const fechaEvento = new Date("2025-04-26T00:00:00").getTime();
+            const ahora = new Date().getTime();
+            const diferencia = fechaEvento - ahora;
+            const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+            document.getElementById("countdown").innerHTML = `${dias} días restantes`;
+        }
+        setInterval(actualizarCuentaRegresiva, 1000);
+        actualizarCuentaRegresiva();
 
-<div id="footer-wrap">
-    <!-- CONTACT BAND -->
-    <div class="bands tel-band">
-        <div class="closeTelBand close-band"><i class="fa fa-times"></i></div>
-        <div class="content-info-band">
-            <div class="ic-cont"><a href="https://wa.link/p3o34c"><img src="images/logo/wp.png" alt="Contáctanos" width="40" height="40" /></a></div>
-            <div class="txt-cont">
-                <a href="https://wa.link/p3o34c"><img src="images/contactanos.png" alt="Contáctanos" width="180" height="40" /></a>
-            </div>
-        </div>
-    </div>
-    <!-- CONTACT BAND END -->
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-sm-6">
-                    <p>copyright &copy; | albercasmonterrey.com.mx | 2024 </p>
-                </div>
-                <div class="col-12 col-sm-4 social">
-                    <p class="pull-right">
-                            <a href="https://wa.link/p3o34c"><i class="fa fa-whatsapp"></i></a>
-                            <a href="https://www.facebook.com/construccion.albercas.monterrey/"><i class="fa fa-facebook"></i></a>
-                            <a href="https://instagram.com/construccion.albercas.mty/"><i class="fa fa-instagram"></i></a>
-                            <a href="https://www.google.com.mx/"><i class="fa fa-google"></i></a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- FOOTER END -->
-
-</div>
-
-<!-- jQuery first, then Tether, then Bootstrap JS. -->
-<script src="js/jquery-3.1.1.min.js"></script>
-<script src="js/jquery-migrate-3.0.0.min.js"></script>
-<script src="js/jquery.validate.min.js"></script>
-<script src="js/tether.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.bootstrap-autohidingnavbar.min.js"></script>
-<script src="js/jquery.stellar.min.js"></script>
-<script src="js/jquery.prettyPhoto.js"></script>
-<script src="js/flickity.pkgd.min.js"></script>
-<script src="js/isotope.pkgd.min.js"></script>
-<script src="js/jquery.debouncedresize.js"></script>
-<script src="js/jquery.waypoints.min.js"></script>
-<script src="js/typed.min.js"></script>
-<script src="js/particles.min.js"></script>
-<script src="js/config.js"></script>
-<script src="js/custom.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAI4pu8_vaoGSCaiW_HQV06I639cIsbdWY&callback=myMap"></script>
+        function animarSecciones() {
+            document.querySelectorAll('.section').forEach(seccion => {
+                if (seccion.getBoundingClientRect().top < window.innerHeight - 100) {
+                    seccion.classList.add('visible');
+                }
+            });
+        }
+        window.addEventListener('scroll', animarSecciones);
+        animarSecciones();
+    </script>
 
 </body>
 </html>
